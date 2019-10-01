@@ -1,4 +1,4 @@
-Import-Module "$($PSScriptRoot)\ReleaseIt"
+Import-Module ReleaseIt
 
 Get-Artifacts
 New-Deployment
