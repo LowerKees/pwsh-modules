@@ -1,9 +1,12 @@
 # Create a module manifest
+Set-Location $PSScriptRoot
+
 New-ModuleManifest `
-    -Path "$PSSCriptRoot\ReleaseIt\ReleaseIt.psd1" `
+    -Path ".\ReleaseIt\ReleaseIt.psd1" `
+    -RootModule "ReleaseIt.psm1" `
     -Author "Martijn Beenker" `
     -Description "Build, release and password rotation functions" `
-    -FunctionsToExport @('Get-Artifacts','New-Deployment','New-Passwords')
+    -FunctionsToExport 'Get-Artifacts','New-Deployment','New-Passwords'
 
 # Find the module path
 $Env:PSModulePath
@@ -21,5 +24,5 @@ Copy-Item `
 # Check result
 Get-ChildItem `
     -Path $Dest `
-    -Filter "ReleaseIt.psm1" `
+    -Filter "ReleaseIt.ps*1" `
     -Recurse

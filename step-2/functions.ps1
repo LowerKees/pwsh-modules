@@ -21,7 +21,3 @@ function New-Passwords {
     Sleep-WithGraphics
     Write-Host "Successfully rotated solution passwords" -ForegroundColor Green
 }
-
-Get-Artifacts
-New-Deployment
-New-Passwords
